@@ -1,6 +1,7 @@
 import compression.Compression;
 import compression.CompressionState;
 import compression.lzw.Lzw;
+import myutils.StringTransformations;
 
 import java.io.*;
 
@@ -11,9 +12,9 @@ public class Main {
         CompressionState lzw = new Lzw();
 
         compression.setState(lzw);
-        compression.encode("test.txt", "test.lzw");
+        compression.encode("test2.txt", "test2.lzw");
         System.out.println();
-        compression.decode("test.lzw", "test_.txt");
+        compression.decode("test2.lzw", "test2.txt");
 
 
 

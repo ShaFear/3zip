@@ -17,13 +17,10 @@ public class Lzw implements CompressionState {
     public void encode(String pathIn, String pathOut) {
         try {
             File in = new File(pathIn);
-
             String input = IOUtils.getStringFromFile(in);
             myutils.StringReader stringReader = new StringReader(input);
-
             File file = new File(pathOut);
             FileOutputStream fop = new FileOutputStream(file);
-
             if (!file.exists()) {
                 file.createNewFile();
             }
