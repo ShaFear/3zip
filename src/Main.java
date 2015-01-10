@@ -1,10 +1,8 @@
 import compression.Compression;
 import compression.CompressionState;
 import compression.lzw.Lzw;
-import compression.lzw.dictionary.Dictionary;
 
 import java.io.*;
-import java.nio.ByteBuffer;
 
 public class Main {
 
@@ -13,9 +11,9 @@ public class Main {
         CompressionState lzw = new Lzw();
 
         compression.setState(lzw);
-        compression.getCompressedFrom(new File("test.txt"));
+        compression.encode("test.txt", "test.lzw");
         System.out.println();
-        compression.getUncompressedFrom(new File("test.txt.lzw"));
+        compression.decode("test.lzw", "test_.txt");
 
 
 

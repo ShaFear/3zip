@@ -15,17 +15,17 @@ public class Compression implements CompressionState {
     }
 
     @Override
-    public File getCompressedFrom(File in) {
-        return compressionState.getCompressedFrom(in);
+    public void encode(String pathIn, String pathOut) {
+        compressionState.encode(pathIn, pathOut);
     }
 
     @Override
-    public File getUncompressedFrom(File in) {
-        return compressionState.getUncompressedFrom(in);
+    public void decode(String pathIn, String pathOut) {
+        compressionState.decode(pathIn, pathOut);
     }
 
     @Override
-    public boolean searchAt(File in, String keywoard) {
-        return compressionState.searchAt(in, keywoard);
+    public boolean search(String pathIn, String keywoard) {
+        return compressionState.search(pathIn, keywoard);
     }
 }

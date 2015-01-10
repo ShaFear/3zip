@@ -14,12 +14,14 @@ import java.util.Scanner;
 public class Lzw implements CompressionState {
 
     @Override
-    public File getCompressedFrom(File in) {
+    public void encode(String pathIn, String pathOut) {
         try {
+            File in = new File(pathIn);
+
             String input = IOUtils.getStringFromFile(in);
             myutils.StringReader stringReader = new StringReader(input);
 
-            File file = new File(in.getPath() + ".lzw");
+            File file = new File(pathOut);
             FileOutputStream fop = new FileOutputStream(file);
 
             if (!file.exists()) {
@@ -59,15 +61,16 @@ public class Lzw implements CompressionState {
         catch (IOException e){
             System.out.print(e);
         }
-        return null;
     }
 
     @Override
-    public File getUncompressedFrom(File in) {
+    public void decode(String pathIn, String pathOut) {
         try {
+            File in = new File(pathIn);
+
             Scanner scanner = new Scanner(in);
 
-            File file = new File(in.getPath() + ".lzw");
+            File file = new File(pathOut);
             FileOutputStream fop = new FileOutputStream(file);
 
             if (!file.exists()) {
@@ -110,11 +113,10 @@ public class Lzw implements CompressionState {
         catch (IOException e){
             System.err.print(e);
         }
-        return null;
     }
 
     @Override
-    public boolean searchAt(File in, String keywoard){
+    public boolean search(String pathIn, String keywoard){
         return false;
     }
 }

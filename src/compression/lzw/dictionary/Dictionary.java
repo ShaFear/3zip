@@ -20,7 +20,7 @@ public class Dictionary {
     }
 
     public void addPosition(String newWord) {
-        if((code < 2147483000 ) && (newWord.length() < 12)){
+        if((code < 2147483000 ) && (newWord.length() < 8)){
         positions.add(new Position(newWord, code.toString()));
         code++;
         }
