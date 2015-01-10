@@ -14,5 +14,7 @@ public class Main {
 
         compression.setState(lzw);
         compression.getCompressedFrom(new File("test.txt"));
+        System.out.println();
+        compression.getUncompressedFrom(new File("slipknot.txt"));
     }
 }

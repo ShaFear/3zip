@@ -38,10 +38,26 @@ public class Dictionary {
         return false;
     }
 
-    public String searchWordsCode(String word) {
+    public boolean searchCode(String code) {
+        for(int j= 0; j<positions.size(); j++){
+            if(code.compareTo(positions.get(j).getCode()) == 0) return true;
+        }
+        return false;
+    }
+
+    public String getWordsCode(String word) {
         for(int j= 0; j<positions.size(); j++){
             if(word.compareTo(positions.get(j).getWord()) == 0) return positions.get(j).getCode();
         }
         return "-1";
     }
+
+    public String getCodesWord(String code) {
+        for(int j= 0; j<positions.size(); j++){
+            if(code.compareTo(positions.get(j).getCode()) == 0) return positions.get(j).getWord();
+        }
+        return "-1";
+    }
+
+
 }
