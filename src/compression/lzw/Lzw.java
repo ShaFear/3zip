@@ -113,9 +113,9 @@ public class Lzw implements CompressionState {
     }
 
     @Override
-    public boolean search(String pathIn, String keywoard){
+    public boolean search(String pathIn, String keyword){
         this.decode(pathIn, "src/tmp");
         String input = IOUtils.getStringFromFile(new File("src/tmp"));
-        return input.contains(keywoard);
+        return input.contains(keyword);
     }
 }

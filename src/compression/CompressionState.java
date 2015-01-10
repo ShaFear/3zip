@@ -10,5 +10,5 @@ public interface CompressionState {
 
     public void decode(String pathIn, String pathOut) ;
 
-    boolean search(String pathIn, String keywoard) ;
+    boolean search(String pathIn, String keyword) ;
 }

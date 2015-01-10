@@ -25,7 +25,7 @@ public class Compression implements CompressionState {
     }
 
     @Override
-    public boolean search(String pathIn, String keywoard) {
-        return compressionState.search(pathIn, keywoard);
+    public boolean search(String pathIn, String keyword) {
+        return compressionState.search(pathIn, keyword);
     }
 }
