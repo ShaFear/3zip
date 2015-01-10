@@ -16,7 +16,7 @@ public class Bzip2 implements CompressionState{
     }
 
     /*
-     * pathIn   - sciezka pliku wejsciowego nzakodowanego
+     * pathIn   - sciezka pliku wejsciowego zakodowanego
      * pathOut  - sciezka pluku wyjsciowego niezakodowanego
      */
     @Override
