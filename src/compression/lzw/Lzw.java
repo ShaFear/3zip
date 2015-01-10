@@ -40,7 +40,7 @@ public class Lzw implements CompressionState {
                 //Jeśli ciągu c + s nie ma w słowniku, wówczas:
                 else {
                     //wypisz kod dla c (c znajduje się w słowniku)
-                    System.out.print(dictionary.getWordsCode(c) + " ");
+                    //System.out.print(dictionary.getWordsCode(c) + " ");
                     fop.write((dictionary.getWordsCode(c) + " ").getBytes());
                     fop.flush();
                     //dodaj ciąg c + s do słownika
@@ -50,7 +50,7 @@ public class Lzw implements CompressionState {
                 }
             }
             //        Na końcu wypisz na wyjście kod związany c
-            System.out.print(dictionary.getWordsCode(c));
+            //System.out.print(dictionary.getWordsCode(c));
             fop.write((dictionary.getWordsCode(c)).getBytes());
             fop.flush();
             fop.close();
@@ -79,7 +79,7 @@ public class Lzw implements CompressionState {
             //        pk := pierwszy kod skompresowanych danych
             String pk = ((Integer)scanner.nextInt()).toString();
             //Wypisz na wyjście ciąg związany z kodem pk, tj. słownik[pk]
-            System.out.print(dictionary.getCodesWord(pk));
+            //System.out.print(dictionary.getCodesWord(pk));
             fop.write((dictionary.getCodesWord(pk)).getBytes());
             fop.flush();
             //Dopóki są jeszcze jakieś słowa kodu:
@@ -91,14 +91,14 @@ public class Lzw implements CompressionState {
                 //Jeśli słowo k jest w słowniku, dodaj do słownika ciąg (pc + pierwszy symbol ciągu słownik[k]), a na wyjście wypisz cały ciąg słownik[k].
                 if(dictionary.searchCode(k)){
                     dictionary.addPosition(pc + dictionary.getCodesWord(k).charAt(0));
-                    System.out.print(dictionary.getCodesWord(k));
+                    //System.out.print(dictionary.getCodesWord(k));
                     fop.write((dictionary.getCodesWord(k)).getBytes());
                     fop.flush();
                 }
                 //        W przeciwnym razie (przypadek scscs) dodaj do słownika ciąg (pc + pierwszy symbol pc) i tenże ciąg wypisz na wyjście.
                 else{
                     dictionary.addPosition(pc + pc.charAt(0));
-                    System.out.print(pc + pc.charAt(0));
+                    //System.out.print(pc + pc.charAt(0));
                     fop.write((pc + pc.charAt(0)).getBytes());
                     fop.flush();
                 }
@@ -114,6 +114,8 @@ public class Lzw implements CompressionState {
 
     @Override
     public boolean search(String pathIn, String keywoard){
-        return false;
+        this.decode(pathIn, "src/tmp");
+        String input = IOUtils.getStringFromFile(new File("src/tmp"));
+        return input.contains(keywoard);
     }
 }
