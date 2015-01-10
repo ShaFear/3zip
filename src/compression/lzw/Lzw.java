@@ -1,6 +1,8 @@
 package compression.lzw;
 
 import compression.CompressionState;
+import myutils.*;
+import myutils.StringReader;
 
 import java.io.*;
 
@@ -11,27 +13,13 @@ public class Lzw implements CompressionState {
 
     @Override
     public File getCompressedFrom(File in) {
-        String fileIn = getStringFromFile(in);
-        System.out.print(fileIn);
+        String input = IOUtils.getStringFromFile(in);
+        System.out.println(input);
+        myutils.StringReader stringReader = new StringReader(input);
+        while(stringReader.hasNextChar()){
+            System.out.print(stringReader.nextChar());
+        }
         return null;
-    }
-
-    private String getStringFromFile(File in) {
-        StringBuilder stringBuilder = new StringBuilder();
-        try {
-            Reader reader = new FileReader(in);
-            char c;
-            while(true){
-                c = (char)reader.read();
-                if(c == '\uFFFF' ) break;
-                stringBuilder.append(c);
-
-            }
-        }
-        catch (IOException e){
-            System.err.print(e);
-        }
-        return stringBuilder.toString();
     }
 
     @Override
