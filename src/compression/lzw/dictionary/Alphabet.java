@@ -7,7 +7,10 @@ public class Alphabet {
     private final char[] characters;
 
     public Alphabet() {
-        characters = new char[]{'a', 'b', 'c'};
+        characters = new char[128];
+        for(int j=0; j<128; j++){
+            characters[j] = (char) j;
+        }
     }
 
     public char[] getCharacters() {

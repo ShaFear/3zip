@@ -31,4 +31,17 @@ public class Dictionary {
     }
 
 
+    public boolean searchWord(String word) {
+        for(int j= 0; j<positions.size(); j++){
+            if(word.compareTo(positions.get(j).getWord()) == 0) return true;
+        }
+        return false;
+    }
+
+    public String searchWordsCode(String word) {
+        for(int j= 0; j<positions.size(); j++){
+            if(word.compareTo(positions.get(j).getWord()) == 0) return positions.get(j).getCode();
+        }
+        return "-1";
+    }
 }

@@ -19,4 +19,8 @@ public class StringReader {
     public char nextChar(){
         return string.charAt(characterIndex++);
     }
+
+    public String nextCharAsString(){
+        return new StringBuilder().append(this.nextChar()).toString();
+    }
 }

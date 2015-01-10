@@ -4,6 +4,7 @@ package compression.lzw.dictionary;
  * Created by shafe_000 on 2015-01-10.
  */
 public class Position {
+    private final String word;
     private final String code;
 
     public Position(String word, String code) {
@@ -15,7 +16,6 @@ public class Position {
         return word;
     }
 
-    private final String word;
 
     public String getCode() {
         return code;

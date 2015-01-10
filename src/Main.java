@@ -1,6 +1,7 @@
 import compression.Compression;
 import compression.CompressionState;
 import compression.lzw.Lzw;
+import compression.lzw.dictionary.Dictionary;
 
 import java.io.File;
 import java.io.FileNotFoundException;
