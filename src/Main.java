@@ -145,19 +145,19 @@ public class Main {
             LZW
                 -i test.txt -o test.lzw -k 0 -t 0
             BZIP2
-                -i test.txt -o test.bzip2 -k 1 -t 0
+                -i test.txt -o test.bz2 -k 1 -t 0
 
         Dekompresja
             LZW
                 -i test.lzw -o testlzw.txt -k 0 -t 1
             BZIP2
-                -i test.bzip2 -o testbzip2.lzw -k 1 -t 1
+                -i test.bz2 -o testbzip2.txt -k 1 -t 1
 
         Wyszukiwanie wzorca
             LZW
                 -i test.lzw -w Psychosocial -k 0 -t 2
             BZIP2
-                -i test.bzip2 -w Psychosocial -k 1 -t 2
+                -i test.bz2 -w Psychosocial -k 1 -t 2
         */
     }
 }
